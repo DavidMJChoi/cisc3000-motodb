@@ -2,7 +2,7 @@
 
 **CREATOR**: David MJ Choi  
 
-**PARTICIPANTS**: 
+**PARTICIPANTS**: <br>
 Bankey Cheong<br>
 Stephen Lam
 
