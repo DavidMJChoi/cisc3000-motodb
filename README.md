@@ -3,7 +3,7 @@
 **CREATOR**: David MJ Choi  
 
 **PARTICIPANTS**: 
-Bankey Cheong
+Bankey Cheong<br>
 Stephen Lam
 
 ## License
