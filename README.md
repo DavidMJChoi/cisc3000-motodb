@@ -9,7 +9,7 @@ Stephen Lam
 ## License
 This project is licensed under the [MIT License](https://mit-license.org).
 
-## **[WORK TO BE DONE]**
+## **[TO-DOs]**
 * ER diagram
 * EER diagram
 * DDL statements
@@ -53,6 +53,8 @@ The motorcycle community database needs to handle relationships between riders a
 5. **Sponsor**: sponsor_id (PK), name, contact_person, phone, email, partnership_level
 6. **RideRoute**: route_id (PK), name, difficulty, distance, description
 7. **EventSponsor**: event_id (FK), sponsor_id (FK) - junction table
+
+**NOTE:** (PK) -> Primary Key; (FK) -> Foreign Key
 
 ### Relationships
 - Member owns Motorcycle (one-to-many)
