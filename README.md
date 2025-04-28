@@ -2,7 +2,9 @@
 
 **CREATOR**: David MJ Choi  
 
-**PARTICIPANTS**: (append your name here.)  
+**PARTICIPANTS**: <br>
+Bankey Cheong<br>
+Stephen Lam
 
 ## License
 This project is licensed under the [MIT License](https://mit-license.org).
