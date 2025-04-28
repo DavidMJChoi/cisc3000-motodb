@@ -63,7 +63,7 @@ The motorcycle community database needs to handle relationships between riders a
 
 ### Constraints
 - Member email must be unique
-- Motorcycle year must be > 1900
+- Motorcycle year must be later than 1900
 - Event date must be in the future when created
 - Maintenance cost must be positive
 - Skill level must be 'beginner', 'intermediate', or 'expert'
