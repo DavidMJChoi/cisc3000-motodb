@@ -1,18 +1,17 @@
-**DATE CREATED**: Apr 24 2025    
+**DATE CREATED**: Apr 24 2025      
 
-**CREATOR**: David MJ Choi  
-
-**PARTICIPANTS**: <br>
+**PARTICIPANTS**:<br>
+David MJ Choi<br>
 Bankey Cheong<br>
 Stephen Lam
 
 ## License
 This project is licensed under the [MIT License](https://mit-license.org).
 
-## **[WORK TO BE DONE]**
+## **[TO-DOs]**
 * ER diagram
 * EER diagram
-* DDL statements
+* **[ONGOING: David, Apr 29]** DDL statements
 * Sample data
 * Queries implementation
 * Strong points (optional in the report)
@@ -55,6 +54,8 @@ The motorcycle community database needs to handle relationships between riders a
 6. **RideRoute**: route_id (PK), name, difficulty, distance, description
 7. **EventSponsor**: event_id (FK), sponsor_id (FK) - junction table
 
+**NOTE:** (PK) -> Primary Key; (FK) -> Foreign Key
+
 ### Relationships
 - Member owns Motorcycle (one-to-many)
 - Member organizes Event (one-to-many)
@@ -66,7 +67,7 @@ The motorcycle community database needs to handle relationships between riders a
 
 ### Constraints
 - Member email must be unique
-- Motorcycle year must be > 1900
+- Motorcycle year must be later than 1900
 - Event date must be in the future when created
 - Maintenance cost must be positive
 - Skill level must be 'beginner', 'intermediate', or 'expert'
