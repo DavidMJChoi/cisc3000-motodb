@@ -9,8 +9,8 @@ Stephen Lam
 This project is licensed under the [MIT License](https://mit-license.org).
 
 ## **[TO-DOs]**
-* ER diagram
-* EER diagram
+* **[COMPLETED: STEPHEN, Apr 29]** ER diagram
+* **[ONGOING: STEPHEN, Apr 29]** EER diagram
 * **[ONGOING: David, Apr 29]** DDL statements
 * Sample data
 * Queries implementation
