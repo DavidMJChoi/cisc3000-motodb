@@ -1,8 +1,7 @@
-**DATE CREATED**: Apr 24 2025    
+**DATE CREATED**: Apr 24 2025      
 
-**CREATOR**: David MJ Choi  
-
-**PARTICIPANTS**: <br>
+**PARTICIPANTS**:<br>
+David MJ Choi<br>
 Bankey Cheong<br>
 Stephen Lam
 
