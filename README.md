@@ -11,7 +11,7 @@ This project is licensed under the [MIT License](https://mit-license.org).
 ## **[TO-DOs]**
 * ER diagram
 * EER diagram
-* DDL statements
+* **[ONGOING: David, Apr 29]** DDL statements
 * Sample data
 * Queries implementation
 * Strong points (optional in the report)
