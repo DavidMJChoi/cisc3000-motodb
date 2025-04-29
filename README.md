@@ -28,6 +28,7 @@ This application will help
 * maintain rider/bike information
 * facilitate event planning 
   
+
 The database will **store** details about 
 * members (contact info, skill levels)
 * their motorcycles (make, model, year)
@@ -35,7 +36,7 @@ The database will **store** details about
 * community events (rides, meetups)
 * event participation
 * sponsors who support the community
- 
+
 This system will enable **queries** about 
 * upcoming events
 * rider statistics
@@ -71,3 +72,27 @@ The motorcycle community database needs to handle relationships between riders a
 - Skill level must be 'beginner', 'intermediate', or 'expert'
 
 
+
+
+
+## 3 ER Diagram
+
+
+
+![diagram-export-4-29-2025-4_33_15-PM](./diagram-export-4-29-2025-4_33_15-PM-1745915638240-2.png)
+
+
+
+**Relationships**
+
+- Member **owns** Motorcycle (1 to many)
+- Member **organizes** Event (1 to many)
+- Member **participates in** Event (many to many via EventParticipation)
+- Motorcycle **has** Maintenance records (1 to many)
+- Event **uses** RideRoute (many to one)
+- Event **has** Sponsors (many to many via EventSponsor)
+- Sponsor **supports** multiple Events (many to many via EventSponsor)
+
+-- --
+
+*You can view and edit this ER diagram directly at the [eraser.io workspace link](https://app.eraser.io/workspace/z95ohfGzXGvx9F8gU8lA?origin=share).*
