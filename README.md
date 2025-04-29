@@ -80,7 +80,7 @@ The motorcycle community database needs to handle relationships between riders a
 
 
 
-![diagram-export-4-29-2025-4_33_15-PM](./diagram-export-4-29-2025-4_33_15-PM-1745915638240-2.png)
+![ER_diagram](./ER_diagram.png)
 
 
 
