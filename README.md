@@ -10,7 +10,7 @@ This project is licensed under the [MIT License](https://mit-license.org).
 
 ## **[TO-DOs]**
 * **[COMPLETED: STEPHEN, May 1]** ER diagram
-* **[ONGOING: STEPHEN, Apr 29]** EER diagram
+* EER diagram
 * **[ONGOING: David, Apr 29]** DDL statements
 * Sample data
 * Queries implementation
