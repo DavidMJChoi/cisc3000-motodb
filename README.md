@@ -9,7 +9,7 @@ Stephen Lam
 This project is licensed under the [MIT License](https://mit-license.org).
 
 ## **[TO-DOs]**
-* **[COMPLETED: STEPHEN, Apr 29]** ER diagram
+* **[COMPLETED: STEPHEN, May 1]** ER diagram
 * **[ONGOING: STEPHEN, Apr 29]** EER diagram
 * **[ONGOING: David, Apr 29]** DDL statements
 * Sample data
@@ -96,4 +96,4 @@ The motorcycle community database needs to handle relationships between riders a
 
 -- --
 
-*You can view and edit this ER diagram directly at the [eraser.io workspace link](https://app.eraser.io/workspace/z95ohfGzXGvx9F8gU8lA?origin=share).*
+*You can view and edit this ER diagram directly at the [lucid](https://lucid.app/lucidchart/6688c01e-cea6-4ec4-8315-8dac2a079742/edit?viewport_loc=-648%2C849%2C3332%2C1374%2C0_0&invitationId=inv_cd8cc2fc-ff14-42d8-a774-647c008aabea).*
