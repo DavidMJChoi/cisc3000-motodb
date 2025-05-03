@@ -1,3 +1,10 @@
+-- DDL includes
+-- * Create tables
+-- * Create Views
+-- * Create Functions
+-- * Create Procedures
+
+
 CREATE TABLE Member (
     rider_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -76,4 +83,62 @@ CREATE TABLE EventSponsor (
     FOREIGN KEY (sponsor_id) REFERENCES Sponsor(sponsor_id)
 );
 
--- More To-dos
+
+
+-- Create Views
+
+CREATE VIEW UpcomingEvents AS
+SELECT e.name, e.date, e.location, r.name AS route, m.name AS organizer
+FROM Event e
+JOIN RideRoute r ON e.route_id = r.route_id
+JOIN Member m ON e.organizer_id = m.rider_id
+WHERE e.date > NOW()
+ORDER BY e.date;
+
+CREATE VIEW MemberBikes AS
+SELECT m.name AS member, mc.make, mc.model, mc.year, mc.engine_size
+FROM Member m
+JOIN Motorcycle mc ON m.rider_id = mc.member_id
+ORDER BY m.name, mc.year DESC;
+
+
+
+-- Create Functions and Procedures
+
+-- Functions
+
+DELIMITER //
+CREATE FUNCTION CalculateRideDuration(ride_distance DECIMAL(6,2), avg_speed DECIMAL(5,2))
+RETURNS DECIMAL(5,2)
+DETERMINISTIC
+BEGIN
+    DECLARE duration DECIMAL(5,2);
+    SET duration = ride_distance / avg_speed;
+    RETURN duration;
+END //
+DELIMITER ;
+
+-- Procedures
+
+DELIMITER //
+CREATE PROCEDURE GetMembersBySkillLevel(IN skill VARCHAR(20))
+BEGIN
+    SELECT name, email, phone, join_date
+    FROM Member
+    WHERE skill_level = skill
+    ORDER BY join_date;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE ScheduleMaintenance(
+    IN bike_id INT,
+    IN service_type VARCHAR(100),
+    IN estimated_cost DECIMAL(8,2),
+    IN notes TEXT
+)
+BEGIN
+    INSERT INTO Maintenance (bike_id, service_date, service_type, cost, notes)
+    VALUES (bike_id, CURDATE(), service_type, estimated_cost, notes);
+END //
+DELIMITER ;
