@@ -3,7 +3,8 @@
 -- * Create Views
 -- * Create Functions
 -- * Create Procedures
-
+Use bike_club;
+START TRANSACTION;
 
 CREATE TABLE Member (
     rider_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,8 +42,8 @@ CREATE TABLE Event (
     route_id INT,
     organizer_id INT,
     FOREIGN KEY (route_id) REFERENCES RideRoute(route_id),
-    FOREIGN KEY (organizer_id) REFERENCES Member(rider_id),
-    CHECK (date > NOW())
+    FOREIGN KEY (organizer_id) REFERENCES Member(rider_id)
+    -- CHECK (date > NOW())
 );
 
 CREATE TABLE EventParticipation (
@@ -83,8 +84,6 @@ CREATE TABLE EventSponsor (
     FOREIGN KEY (sponsor_id) REFERENCES Sponsor(sponsor_id)
 );
 
-
-
 -- Create Views
 
 CREATE VIEW UpcomingEvents AS
@@ -106,6 +105,17 @@ ORDER BY m.name, mc.year DESC;
 -- Create Functions and Procedures
 
 -- Functions
+DELIMITER //
+CREATE TRIGGER check_event_date
+BEFORE INSERT ON Event
+FOR EACH ROW
+BEGIN
+    IF NEW.date <= NOW() THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Event date must be in the future';
+    END IF;
+END //
+DELIMITER ;
 
 DELIMITER //
 CREATE FUNCTION CalculateRideDuration(ride_distance DECIMAL(6,2), avg_speed DECIMAL(5,2))
@@ -142,3 +152,5 @@ BEGIN
     VALUES (bike_id, CURDATE(), service_type, estimated_cost, notes);
 END //
 DELIMITER ;
+
+COMMIT;
