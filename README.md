@@ -10,7 +10,7 @@ This project is licensed under the [MIT License](https://mit-license.org).
 
 ## **[TO-DOs]**
 * **[COMPLETED: STEPHEN, May 1]** ER diagram
-* *[COMPLETED: BANKEY, May 4]** EER diagram
+* **[COMPLETED: BANKEY, May 4]** EER diagram
 * **[BASICALLY COMPLETED: David, May 3]** DDL statements
 * **[ONGOING: David, May 3]** Sample data
     * Suggestion: generate more using Gen-AI.
