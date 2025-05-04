@@ -10,7 +10,7 @@ This project is licensed under the [MIT License](https://mit-license.org).
 
 ## **[TO-DOs]**
 * **[COMPLETED: STEPHEN, May 1]** ER diagram
-* EER diagram
+* *[COMPLETED: BANKEY, May 4]** EER diagram
 * **[BASICALLY COMPLETED: David, May 3]** DDL statements
 * **[ONGOING: David, May 3]** Sample data
     * Suggestion: generate more using Gen-AI.
@@ -100,6 +100,9 @@ The motorcycle community database needs to handle relationships between riders a
 
 
 ![ER_diagram](./EER_diagram.png)
+
+
+## 5 Strong points of the project
 
 
 
