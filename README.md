@@ -96,6 +96,13 @@ The motorcycle community database needs to handle relationships between riders a
 - Event **has** Sponsors (many to many via EventSponsor)
 - Sponsor **supports** multiple Events (many to many via EventSponsor)
 
+## 4 EER model
+
+
+![ER_diagram](./EER_diagram.png)
+
+
+
 -- --
 
 *You can view and edit this ER diagram directly at the [lucid](https://lucid.app/lucidchart/6688c01e-cea6-4ec4-8315-8dac2a079742/edit?viewport_loc=-648%2C849%2C3332%2C1374%2C0_0&invitationId=inv_cd8cc2fc-ff14-42d8-a774-647c008aabea).*
