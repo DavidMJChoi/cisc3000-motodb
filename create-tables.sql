@@ -84,6 +84,17 @@ CREATE TABLE EventSponsor (
     FOREIGN KEY (sponsor_id) REFERENCES Sponsor(sponsor_id)
 );
 
+DELIMITER //
+CREATE TRIGGER check_event_date
+BEFORE INSERT ON Event
+FOR EACH ROW
+BEGIN
+    IF NEW.date <= NOW() THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Event date must be in the future';
+    END IF;
+END //
+DELIMITER ;
 -- Create Views
 
 CREATE VIEW UpcomingEvents AS
@@ -105,18 +116,6 @@ ORDER BY m.name, mc.year DESC;
 -- Create Functions and Procedures
 
 -- Functions
-DELIMITER //
-CREATE TRIGGER check_event_date
-BEFORE INSERT ON Event
-FOR EACH ROW
-BEGIN
-    IF NEW.date <= NOW() THEN
-        SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Event date must be in the future';
-    END IF;
-END //
-DELIMITER ;
-
 DELIMITER //
 CREATE FUNCTION CalculateRideDuration(ride_distance DECIMAL(6,2), avg_speed DECIMAL(5,2))
 RETURNS DECIMAL(5,2)
