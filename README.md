@@ -15,8 +15,12 @@ This project is licensed under the [MIT License](https://mit-license.org).
 * **[ONGOING: David, May 3]** Sample data
     * Suggestion: generate more using Gen-AI.
 * **[ONGOING: David, May 3]** Queries implementation
-* **[ONGOING: BANKEY, May 5;COMMENT:I AM COMPLETING THE FINAL REPORT, ANY DATA CHANGED THAT MAT CAUSED INCONSISTENCE IN THE FINAL REPORT, PLEASE CONTACT ME]** Sort and typeset the final report
-    * Strong points (optional in the report)
+* **[ONGOING: BANKEY, May 5]** Sort and typeset the final report 
+    * Strong points (optional in the report)<br>
+<mark>
+I'm completing the final report. if any data changes might cause inconsistencies in the final report, please contact me.
+</mark>
+
 
 # Database Design Project for Local Motorcycle Community
 
