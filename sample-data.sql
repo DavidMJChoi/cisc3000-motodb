@@ -89,3 +89,110 @@ INSERT INTO EventSponsor (event_id, sponsor_id, contribution_amount) VALUES
 (5, 1, 4000.00);
 
 COMMIT;
+
+
+USE bike_club;
+START TRANSACTION;
+
+-- Member: Insert 10 additional records (total 15 with existing 5)
+INSERT INTO Member (name, phone, email, join_date, skill_level) VALUES
+('Frank Spoke', '555-0206', 'frank.spoke@gmail.com', '2020-04-22', 'beginner'),
+('Grace Pedal', '555-0207', 'grace.pedal@gmail.com', '2021-08-30', 'intermediate'),
+('Henry Crank', '555-0208', 'henry.crank@gmail.com', '2022-11-10', 'expert'),
+('Isabel Chain', '555-0209', 'isabel.chain@gmail.com', '2023-02-14', 'beginner'),
+('Jack Sprocket', '555-0210', 'jack.sprocket@gmail.com', '2019-07-19', 'intermediate'),
+('Kelly Frame', '555-0211', 'kelly.frame@gmail.com', '2021-12-05', 'expert'),
+('Liam Hub', '555-0212', 'liam.hub@gmail.com', '2022-06-25', 'beginner'),
+('Mia Fork', '555-0213', 'mia.fork@gmail.com', '2020-10-08', 'intermediate'),
+('Noah Rim', '555-0214', 'noah.rim@gmail.com', '2023-05-17', 'expert'),
+('Olivia Tire', '555-0215', 'olivia.tire@gmail.com', '2021-03-01', 'beginner');
+
+-- Motorcycle: Insert 10 additional records (total 15 with existing 5)
+INSERT INTO Motorcycle (make, model, year, engine_size, member_id) VALUES
+('Honda', 'CBR1000RR', 2020, 1.00, 6),
+('Yamaha', 'YZF-R1', 2021, 1.00, 7),
+('Harley-Davidson', 'Sportster', 2019, 0.88, 8),
+('KTM', 'Duke 390', 2022, 0.39, 9),
+('Ducati', 'Monster 821', 2020, 0.82, 10),
+('Kawasaki', 'Versys 650', 2021, 0.65, 11),
+('BMW', 'R1250GS', 2022, 1.25, 12),
+('Suzuki', 'SV650', 2019, 0.65, 13),
+('Triumph', 'Bonneville T120', 2020, 1.20, 14),
+('Honda', 'CB500F', 2021, 0.50, 15);
+
+-- RideRoute: Insert 10 additional records (total 15 with existing 5)
+INSERT INTO RideRoute (name, difficulty, distance, description) VALUES
+('City Circuit', 'easy', 25.50, 'Urban ride through downtown with light traffic.'),
+('Canyon Carve', 'hard', 90.75, 'Twisty route through narrow canyon roads.'),
+('Lakeside Loop', 'medium', 60.25, 'Scenic ride around a serene lake.'),
+('Highway Haul', 'easy', 150.00, 'Long, straight ride on open highways.'),
+('Cliffside Cruise', 'expert', 110.50, 'Challenging ride along steep cliffs.'),
+('Prairie Path', 'easy', 45.00, 'Flat, open ride through grasslands.'),
+('Hill Climb', 'hard', 80.25, 'Steep ascents and descents in hilly terrain.'),
+('River Run', 'medium', 70.50, 'Ride following a winding river.'),
+('Night Ride', 'expert', 55.75, 'After-dark ride with illuminated paths.'),
+('Vineyard Venture', 'easy', 35.25, 'Gentle ride through wine country.');
+
+-- Event: Insert 10 additional records (total 15 with existing 5)
+-- Dates are in the future to satisfy the check_event_date trigger
+INSERT INTO Event (name, date, location, description, route_id, organizer_id) VALUES
+('City Sprint', '2025-11-01 10:00:00', 'San Diego, CA', 'Fast-paced urban group ride.', 6, 6),
+('Canyon Quest', '2025-12-15 08:30:00', 'Flagstaff, AZ', 'Thrilling canyon group adventure.', 7, 7),
+('Lakeside Rally', '2026-01-10 09:00:00', 'Lake Tahoe, NV', 'Scenic group ride with camping.', 8, 8),
+('Highway Journey', '2025-11-20 07:00:00', 'Phoenix, AZ', 'Long-distance group cruise.', 9, 9),
+('Cliffside Challenge', '2026-02-05 06:30:00', 'Big Sur, CA', 'Expert-level coastal ride.', 10, 10),
+('Prairie Picnic', '2025-10-25 11:00:00', 'Omaha, NE', 'Relaxed ride with group picnic.', 11, 11),
+('Hilltop Hustle', '2025-12-01 09:30:00', 'Boulder, CO', 'Challenging hill climb event.', 12, 12),
+('River Rally', '2026-03-15 10:30:00', 'Asheville, NC', 'Group ride along scenic rivers.', 13, 13),
+('Night Cruise', '2025-11-15 19:00:00', 'Miami, FL', 'Evening ride with city lights.', 14, 14),
+('Vineyard Voyage', '2026-04-10 12:00:00', 'Sonoma, CA', 'Wine country group ride.', 15, 15);
+
+-- EventParticipation: Insert 15 additional records (total 23 with existing 8)
+INSERT INTO EventParticipation (event_id, rider_id) VALUES
+(6, 6), (6, 7), (6, 8),
+(7, 7), (7, 9),
+(8, 8), (8, 10), (8, 11),
+(9, 9), (9, 12),
+(10, 10), (10, 13),
+(11, 11), (11, 14), (11, 15);
+
+-- Maintenance: Insert 10 additional records (total 15 with existing 5)
+INSERT INTO Maintenance (bike_id, service_date, service_type, cost, notes) VALUES
+(6, '2025-03-01', 'Oil Change', 80.00, 'Standard oil change.'),
+(7, '2025-04-10', 'Tire Replacement', 220.00, 'Replaced rear tire.'),
+(8, '2025-05-15', 'Brake Service', 130.00, 'New brake pads installed.'),
+(9, '2025-06-20', 'Chain Adjustment', 50.00, 'Tightened and lubricated.'),
+(10, '2025-07-01', 'Full Service', 400.00, 'Comprehensive maintenance.'),
+(11, '2025-08-05', 'Oil Change', 90.00, 'Used high-performance oil.'),
+(12, '2025-09-10', 'Tire Replacement', 270.00, 'Both tires replaced.'),
+(13, '2025-10-15', 'Brake Service', 140.00, 'Brake fluid flush.'),
+(14, '2025-11-20', 'Chain Adjustment', 55.00, 'Adjusted chain tension.'),
+(15, '2025-12-01', 'Full Service', 380.00, 'Annual tune-up.');
+
+-- Sponsor: Insert 10 additional records (total 15 with existing 5)
+INSERT INTO Sponsor (name, contact_person, phone, email, partnership_level) VALUES
+('BikeZone', 'James Carter', '555-0306', 'james.carter@gmail.com', 'gold'),
+('SpeedShop', 'Emily Davis', '555-0307', 'emily.davis@gmail.com', 'silver'),
+('RideNow', 'Michael Chen', '555-0308', 'michael.chen@gmail.com', 'bronze'),
+('CycleWorks', 'Sophie Adams', '555-0309', 'sophie.adams@gmail.com', 'platinum'),
+('MotoHub', 'Daniel Kim', '555-0310', 'daniel.kim@gmail.com', 'silver'),
+('GearZone', 'Rachel Patel', '555-0311', 'rachel.patel@gmail.com', 'gold'),
+('SpeedTire', 'Chris Evans', '555-0312', 'chris.evans@gmail.com', 'bronze'),
+('BikeCraft', 'Laura White', '555-0313', 'laura.white@gmail.com', 'silver'),
+('RideFast', 'Steven Brown', '555-0314', 'steven.brown@gmail.com', 'platinum'),
+('CycleGear', 'Megan Lee', '555-0315', 'megan.lee@gmail.com', 'gold');
+
+-- EventSponsor: Insert 10 additional records (total 16 with existing 6)
+INSERT INTO EventSponsor (event_id, sponsor_id, contribution_amount) VALUES
+(6, 6, 4500.00),
+(7, 7, 2000.00),
+(8, 8, 1000.00),
+(9, 9, 6000.00),
+(10, 10, 3500.00),
+(11, 11, 4000.00),
+(12, 12, 1200.00),
+(13, 13, 2500.00),
+(14, 14, 5500.00),
+(15, 15, 3000.00);
+
+COMMIT;
